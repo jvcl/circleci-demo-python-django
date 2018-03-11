@@ -42,7 +42,8 @@ jobs:
       - image: circleci/python:3.6.4
     steps:
       - checkout
-      - run: echo "hello build"
+      - run: echo ${CIRCLE_SHA1}
+      - run: echo "hello build ${CIRCLE_SHA1}"
 
 workflows:
   version: 2
