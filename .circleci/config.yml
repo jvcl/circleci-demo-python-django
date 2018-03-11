@@ -57,7 +57,7 @@ workflows:
               only: master
   build-and-test:
     jobs:
-      - build
+      - build:
           filters:
             branches:
               ignore: master
