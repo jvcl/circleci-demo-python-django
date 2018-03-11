@@ -43,11 +43,6 @@ jobs:
     steps:
       - checkout
       - run: echo "hello build"
-    - store_test_results:
-        path: test-results
-    - store_artifacts:
-        path: test-results
-        destination: tr1
 
 workflows:
   version: 2
