@@ -1,9 +1,6 @@
 version: 2
 jobs:
   build:
-    branches:
-      ignore:
-        - master
     working_directory: ~/circleci-demo-python-django
     docker:
       - image: circleci/python:3.6.4
@@ -40,9 +37,6 @@ jobs:
           path: test-results
           destination: tr1
   deploy:
-    branches:
-      only:
-        - master
     working_directory: ~/circleci-demo-python-django
     docker:
       - image: circleci/python:3.6.4
@@ -50,15 +44,15 @@ jobs:
       - checkout
       - run: echo "hello build"
 
-# workflows:
-#   version: 2
-#   build-and-deploy:
-#     jobs:
-#       - build
-#       - deploy:
-#           requires:
-#             - build
-#           filters:
-#             branches:
-#               only: master
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 
