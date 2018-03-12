@@ -44,10 +44,10 @@ jobs:
       - run: sudo pip install awscli
       - run:
           command: |
-              aws deploy create-deployment
-              --application-name CreativeRooms
-              --deployment-group-name CreativeRoomsGroup
-              --description "Master Branch Deployment"
+              aws deploy create-deployment \
+              --application-name CreativeRooms \
+              --deployment-group-name CreativeRoomsGroup \
+              --description "Master Branch Deployment" \
               --github-location repository=jvcl/cr-api,commitId=15600906415966af1713ae6b8e1ca0d4717ad250
       - run: echo ${CIRCLE_SHA1}
       - run: echo "hello build ${CIRCLE_SHA1}"
