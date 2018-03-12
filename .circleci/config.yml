@@ -49,6 +49,7 @@ jobs:
               --deployment-group-name CreativeRoomsGroup \
               --description "Master Branch Deployment" \
               --github-location repository=jvcl/cr-api,commitId=15600906415966af1713ae6b8e1ca0d4717ad250
+              --region ap-southeast-2
       - run: echo ${CIRCLE_SHA1}
       - run: echo "hello build ${CIRCLE_SHA1}"
 workflows:
