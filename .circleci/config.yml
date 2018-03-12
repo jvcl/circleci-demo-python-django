@@ -42,7 +42,9 @@ jobs:
     steps:
       - checkout
       - run: sudo pip install awscli
-      - run: aws deploy create-deployment |
+      - run:
+          command: |
+              aws deploy create-deployment
               --application-name CreativeRooms
               --deployment-group-name CreativeRoomsGroup
               --description "Master Branch Deployment"
