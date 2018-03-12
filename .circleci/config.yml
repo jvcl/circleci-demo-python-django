@@ -41,7 +41,7 @@ jobs:
       - image: circleci/python:3.6.4
     steps:
       - checkout
-      - run: pip install awscli
+      - run: sudo pip install awscli
       - run: aws deploy create-deployment \
               --application-name CreativeRooms \
               --deployment-group-name CreativeRoomsGroup \
